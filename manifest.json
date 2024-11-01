@@ -5,10 +5,14 @@
   "description": "Отлавливает запросы к VK и выводит их в консоль.",
   "permissions": ["storage", "webRequest", "webRequestBlocking", "<all_urls>", "activeTab"],
   "browser_action": {
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "default_icon": "icons/show.png"
   },
   "background": {
     "scripts": ["background.js"],
     "persistent": false
+  },
+  "icons": {
+    "48": "icons/show.png"
   }
 }

@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const toggle = document.getElementById("toggle");
     if (result.toggleState !== undefined) {
       toggle.checked = result.toggleState;
+      updateIcon(toggle.checked);
     }
   });
 
@@ -15,6 +16,13 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       console.log("Переключатель выключен");
     }
+
+    updateIcon(isChecked);
     browser.runtime.sendMessage({ toggleState: isChecked });
   });
+
+  function updateIcon(isChecked) {
+    const iconPath = isChecked ? "icons/not_show.png" : "icons/show.png";
+    browser.browserAction.setIcon({ path: iconPath });
+  }
 });
