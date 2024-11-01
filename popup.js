@@ -11,12 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const isChecked = this.checked;
     browser.storage.local.set({ toggleState: isChecked });
 
-    if (isChecked) {
-      console.log("Переключатель включен");
-    } else {
-      console.log("Переключатель выключен");
-    }
-
     updateIcon(isChecked);
     browser.runtime.sendMessage({ toggleState: isChecked });
   });
