@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+  "name": "VK Request Logger",
+  "version": "1.0",
+  "description": "Отлавливает запросы к VK и выводит их в консоль.",
+  "permissions": ["storage", "webRequest", "webRequestBlocking", "<all_urls>", "activeTab"],
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  }
+}
